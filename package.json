@@ -6,7 +6,8 @@
     "scripts": {
         "start": "node src/index.js",
         "dev": "env-cmd -f ./config/dev.env nodemon src/index.js",
-        "test": "env-cmd -f ./config/test.env jest --watch --runInBand"
+        "test": "env-cmd -f ./config/test.env jest --watch --runInBand",
+        "pretty": "prettier --write \"./**/*.{js,jsx,json}\""
     },
     "jest": {
         "testEnvironment": "node"
@@ -15,8 +16,7 @@
         "trailingComma": "none",
         "tabWidth": 4,
         "semi": false,
-        "singleQuote": true,
-        "editor.formatOnSave": true
+        "singleQuote": true
     },
     "keywords": [],
     "author": "peemtanapat",
@@ -36,6 +36,7 @@
         "env-cmd": "^10.1.0",
         "jest": "^26.6.3",
         "nodemon": "^2.0.6",
+        "prettier": "^2.2.1",
         "supertest": "^6.0.1"
     }
 }
