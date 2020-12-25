@@ -88,6 +88,7 @@ router.post('/users', async (request, response) => {
     response.status(201).send({ user, token })
   } catch (error) {
     // send client error message
+    console.log(error.message);
     response.status(400).send({ message: error.message })
   }
 })
@@ -126,7 +127,7 @@ router.delete('/users/me', auth, async (request, response) => {
     await user.remove()
     sendCancelSurveyEmail(user.email, user.name)
 
-    response.send(request.user)
+    response.send(user)
   } catch (error) {
     response.status(500).send({ message: error.message })
   }
